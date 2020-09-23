@@ -213,12 +213,11 @@
         function sendMail() {
             var mail = $('#inputEmail').val();
             $.ajax({
-                type: "POST",
+                type: "GET",
                 beforeSend: function (request) {
                     request.setRequestHeader("x-functions-key", "DanJktzjazdt0HuvvfqxRAk9dIhaohye89IJZcZqeUXM5Me4A5eIEA==");
                 },
-                url: "https://thecloudfirst-stayintouch-api.azurewebsites.net/api/StayInTouch",
-                data: { mail: mail },
+                url: "https://thecloudfirst-stayintouch-api.azurewebsites.net/api/StayInTouch/?mail=" + mail,
                 success: function () {
                     alert('Registration done');
                 },
